@@ -15,7 +15,7 @@ public class ThirdStrategy extends SecondStrategy{
         super.handle(p,r,z,processes,cpus);
 
         ArrayList<CPU> looseCPUs = (ArrayList<CPU>) cpus.stream()
-                .filter(cpu -> cpu.getWorkload() < r).toList();
+                .filter(cpu -> cpu.getWorkload() < r).collect(Collectors.toList());
 
         for(int i = 0; i < looseCPUs.size();i++){
             CPU cpu = looseCPUs.get(0);
