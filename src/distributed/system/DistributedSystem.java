@@ -5,6 +5,7 @@ import strategy.ThirdStrategy;
 import utils.CPU;
 import utils.Generator;
 import utils.Process;
+import utils.StandardDeviation;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -76,6 +77,7 @@ public class DistributedSystem {
         System.out.println("Migrations:"+CPU.migrations);
         System.out.println("Asks about workload:"+CPU.asksAboutWorkload);
         System.out.println("Average workload:" +  String.format("%.1f",getAvgWorkload() * 100) + "%");
+        System.out.println("Standard deviation:" + String.format("%.1f", StandardDeviation.calculateSD(workloads) * 100) + "%");
         System.out.println("_____________________________________________");
     }
 
